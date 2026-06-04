@@ -226,6 +226,7 @@
           <li class="menuItem"><a href="#scope">Home</a></li>
           <li class="menuItem"><a href="#timeline">Timeline</a></li>
           <li class="menuItem"><a href="#schedule">Schedule</a></li>
+          <li class="menuItem"><a href="#awards">Awards</a></li>
           <li class="menuItem"><a href="#papers">Papers</a></li>
           <li class="menuItem"><a href="#speakers">Speakers</a></li>
           <li class="menuItem"><a href="#organizers">Organizers</a></li>
@@ -699,6 +700,33 @@
 
 
     <!-- Accepted Papers -->
+    <div id="awards" class="content-section-b">
+      <div class="container">
+        <div class="row wow fadeInRightBig" data-animation-delay="200">
+          <h3 class="section-heading" style="text-align:justify;color:#164FC9">Paper Awards</h3>
+          <p style="color: #555; margin-top: 12px; margin-bottom: 24px; line-height: 1.55;">
+            Congratulations to the recipients of the 3DMV @ CVPR 2026 Best Paper Award and Best Paper Runner-up Award.
+          </p>
+
+          <div class="paper award best-paper">
+            <div class="paper-body">
+              <h5>DanceNet3D: A 3D Dance Dataset with Multi-View Videos and 3DGS Reconstructions<span class="badge-award badge-best">Best Paper</span></h5>
+              <div class="authors">Shihang Wei (New York University); Mingjian Li (New York University); Ran Gong (New York University); Yueyu Hu (New York University); Yao Wang (New York University)</div>
+            </div>
+            <a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2026W/3DMV/papers/Wei_DanceNet3D_A_3D_Dance_Dataset_with_Multi-View_Videos_and_3DGS_CVPRW_2026_paper.pdf" title="Open proceedings PDF" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
+          </div>
+
+          <div class="paper award runner-up">
+            <div class="paper-body">
+              <h5>TerraSky3D: Multi-View Reconstructions of European Landmarks in 4K<span class="badge-award badge-runnerup">Runner-up</span></h5>
+              <div class="authors">Mattia D'Urso (TU Graz); Yuxi Hu (TU Graz); Christian Sormann (Sony); Mattia Rossi (Sony); Friedrich Fraundorfer (TU Graz)</div>
+            </div>
+            <a class="paper-link" href="https://openaccess.thecvf.com/content/CVPR2026W/3DMV/papers/DUrso_TerraSky3D_Multi-View_Reconstructions_of_European_Landmarks_in_4K_CVPRW_2026_paper.pdf" title="Open proceedings PDF" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="papers" class="content-section-a">
       <div class="container">
         <div class="row wow fadeInRightBig" data-animation-delay="200">
@@ -1144,6 +1172,37 @@
   .paper.camera-ready {
     border-left-color: #16a34a;
     background: #f6fbf7;
+  }
+
+  .paper.award.best-paper {
+    border-left-color: #d4af37;
+    background: #fffdf3;
+  }
+
+  .paper.award.runner-up {
+    border-left-color: #b08d57;
+    background: #fdfbf7;
+  }
+
+  .paper .badge-award {
+    display: inline-block;
+    margin-left: 0.6em;
+    padding: 2px 8px;
+    font-size: 0.65em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 999px;
+    vertical-align: middle;
+  }
+
+  .paper .badge-best {
+    background: #d4af37;
+  }
+
+  .paper .badge-runnerup {
+    background: #b08d57;
   }
 
   .paper-body {
