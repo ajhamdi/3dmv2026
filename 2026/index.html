@@ -257,35 +257,34 @@
           </div>
 
           <script>
-            const media = [
-              'IMG_6584.jpg', 'IMG_6585.jpg', 'IMG_6586.jpg', 'IMG_6587.jpg', 'IMG_6588.jpg', 'IMG_6589.jpg', 'IMG_6590.jpg', 'IMG_6591.jpg', 'IMG_6592.jpg', 'IMG_6593.jpg', 'IMG_6594.jpg', 'IMG_6595.jpg', 'IMG_6596.jpg', 'IMG_6597.jpg', 'IMG_6598.jpg', 'IMG_6599.jpg', 'IMG_6600.jpg', 'IMG_6601.jpg', 'IMG_6602.jpg', 'IMG_6603.jpg', 'IMG_6604.jpg', 'IMG_6605.jpg', 'IMG_6606.jpg', 'IMG_6607.jpg', 'IMG_6608.jpg', 'IMG_6609.jpg', 'IMG_6610.jpg', 'IMG_6611.jpg', 'IMG_6612.jpg', 'IMG_6613.jpg', 'IMG_6614.jpg', 'IMG_6615.jpg', 'IMG_6616.jpg', 'IMG_6617.mp4', 'IMG_6618.jpg', 'IMG_6619.jpg', 'IMG_6620.jpg', 'IMG_6621.jpg', 'IMG_6622.jpg', 'IMG_6623.jpg', 'IMG_6624.jpg', 'IMG_6625.jpg', 'IMG_6626.jpg', 'IMG_6627.jpg', 'IMG_6628.jpg', 'IMG_6629.jpg', 'IMG_6633.jpg', 'IMG_6634.jpg', 'IMG_6635.jpg'
+            // Event photos (first two, the last one, and the video are intentionally excluded)
+            const photos = [
+              'IMG_6586.jpg', 'IMG_6587.jpg', 'IMG_6588.jpg', 'IMG_6589.jpg', 'IMG_6590.jpg', 'IMG_6591.jpg', 'IMG_6592.jpg', 'IMG_6593.jpg', 'IMG_6594.jpg', 'IMG_6595.jpg', 'IMG_6596.jpg', 'IMG_6597.jpg', 'IMG_6598.jpg', 'IMG_6599.jpg', 'IMG_6600.jpg', 'IMG_6601.jpg', 'IMG_6602.jpg', 'IMG_6603.jpg', 'IMG_6604.jpg', 'IMG_6605.jpg', 'IMG_6606.jpg', 'IMG_6607.jpg', 'IMG_6608.jpg', 'IMG_6609.jpg', 'IMG_6610.jpg', 'IMG_6611.jpg', 'IMG_6612.jpg', 'IMG_6613.jpg', 'IMG_6614.jpg', 'IMG_6615.jpg', 'IMG_6616.jpg', 'IMG_6618.jpg', 'IMG_6619.jpg', 'IMG_6620.jpg', 'IMG_6621.jpg', 'IMG_6622.jpg', 'IMG_6623.jpg', 'IMG_6624.jpg', 'IMG_6625.jpg', 'IMG_6626.jpg', 'IMG_6627.jpg', 'IMG_6628.jpg', 'IMG_6629.jpg', 'IMG_6633.jpg', 'IMG_6634.jpg'
             ];
+
+            // Fisher-Yates shuffle so the gallery looks different on every load
+            for (let i = photos.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [photos[i], photos[j]] = [photos[j], photos[i]];
+            }
+
+            // Only render half of them to keep the page fast
+            const selected = photos.slice(0, Math.ceil(photos.length / 2));
 
             const container = document.getElementById('image-container');
 
-            media.forEach(file => {
-              if (file.toLowerCase().endsWith('.mp4')) {
-                const video = document.createElement('video');
-                video.src = `img/event/${file}`;
-                video.controls = true;
-                video.muted = true;
-                video.loop = true;
-                video.playsInline = true;
-                video.preload = 'metadata';
-                container.appendChild(video);
-              } else {
-                const link = document.createElement('a');
-                link.href = `img/event/${file}`;
-                link.target = "_blank";
+            selected.forEach(file => {
+              const link = document.createElement('a');
+              link.href = `img/event/${file}`;
+              link.target = "_blank";
 
-                const img = document.createElement('img');
-                img.src = `img/event/${file}`;
-                img.alt = file;
-                img.loading = "lazy";
+              const img = document.createElement('img');
+              img.src = `img/event/${file}`;
+              img.alt = file;
+              img.loading = "lazy";
 
-                link.appendChild(img);
-                container.appendChild(link);
-              }
+              link.appendChild(img);
+              container.appendChild(link);
             });
           </script>
         </div>
