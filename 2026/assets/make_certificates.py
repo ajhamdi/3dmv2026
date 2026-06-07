@@ -35,7 +35,7 @@ REVIEWERS = [
     ("Jianqi", "Chen", "Beihang University"),
     ("Jinjie", "Mai", "KAUST"),
     ("Nitish", "Agarwal", "KinaTrax"),
-    ("Priyam", "Parashar", "FAIR, Meta"),
+    ("Priyam", "Parashar", "Waymo"),
     ("Renaud", "Vandeghen", "University of Liège"),
     ("Sara", "Rojas Martinez", "KAUST"),
     ("Shuzhou", "Yang", "Peking University"),

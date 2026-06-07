@@ -2,3 +2,5 @@
 wayne
 _site
 .jekyll*
+__pycache__/
+*.pyc
